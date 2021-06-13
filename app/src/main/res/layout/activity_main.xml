@@ -4,9 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.MainActivity"
-    android:orientation="vertical">
-
+    tools:context=".view.MainActivity">
 
 
     <FrameLayout
@@ -21,13 +19,12 @@
         android:id="@+id/main_navbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0"
         android:layout_gravity="bottom"
-        android:background="#6e70ff"
-        app:menu="@menu/item_menu"
-        app:itemIconTint="@color/white"
-        app:itemTextColor="@color/white"
-        >
+        android:layout_weight="0"
+        android:background="@color/purple_primary"
+        app:itemIconTint="@color/yellow"
+        app:itemTextColor="@color/yellow"
+        app:menu="@menu/item_menu">
 
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 

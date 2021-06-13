@@ -2,4 +2,31 @@
     <string name="app_name">NBA</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_login2">LoginActivity2</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="preview">Preview</string>
+    <string name="todo">TODO</string>
+    <string name="usernamee">Username :</string>
+    <string name="fullnamee">Fullname :</string>
+    <string name="passwordd">Password :</string>
+    <string name="delete">Delete</string>
+    <string name="update">Update</string>
+    <string name="username">Username</string>
+    <string name="fullname">Fullname</string>
+    <string name="team1">Team1</string>
+    <string name="team2">Team2</string>
+    <string name="_999">999</string>
+    <string name="_888">888</string>
+    <string name="detail">Detail....</string>
+    <string name="team_name">Team Name</string>
+    <string name="register">Register</string>
+    <string name="login">Login</string>
+    <string name="password">Password</string>
 </resources>
