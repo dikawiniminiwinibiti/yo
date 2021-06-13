@@ -21,9 +21,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:layout_weight="0"
-        android:background="#393bff"
-        app:itemIconTint="@color/white"
-        app:itemTextColor="@color/white"
+        android:background="@color/purple_primary"
+        app:itemIconTint="@color/yellow"
+        app:itemTextColor="@color/yellow"
         app:menu="@menu/item_menu">
 
     </com.google.android.material.bottomnavigation.BottomNavigationView>
