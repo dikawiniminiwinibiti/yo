@@ -27,7 +27,7 @@
         android:layout_gravity="end"
         android:layout_marginTop="20dp"
         android:layout_marginRight="40dp"
-        android:fontFamily="@font/PopMedium"
+        android:fontFamily="@font/popmedium"
         android:text="@string/login"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -39,7 +39,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="20dp"
-        android:fontFamily="@font/PopMedium"
+        android:fontFamily="@font/popmedium"
         android:text="@string/register"
         android:textColor="@color/white"
         android:textSize="40sp"
@@ -65,7 +65,7 @@
         app:layout_constraintTop_toTopOf="@+id/textsignin">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:fontFamily="@font/PopMedium"
+            android:fontFamily="@font/popmedium"
             android:id="@+id/ti_username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -92,7 +92,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tl_fullname">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:fontFamily="@font/PopMedium"
+            android:fontFamily="@font/popmedium"
             android:id="@+id/ti_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -117,7 +117,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tl_username">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:fontFamily="@font/PopMedium"
+            android:fontFamily="@font/popmedium"
             android:id="@+id/ti_fullname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -126,7 +126,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.button.MaterialButton
-        android:fontFamily="@font/PopMedium"
+        android:fontFamily="@font/popmedium"
         android:layout_marginTop="50dp"
         android:textSize="17sp"
         android:id="@+id/btn_register"
