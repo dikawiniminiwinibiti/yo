@@ -65,7 +65,7 @@
         app:layout_constraintTop_toTopOf="@+id/textsignin">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:fontFamily="@font/popmedium"
+            android:fontFamily="@font/popregular"
             android:id="@+id/ti_username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -92,7 +92,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tl_fullname">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:fontFamily="@font/popmedium"
+            android:fontFamily="@font/popregular"
             android:id="@+id/ti_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -117,7 +117,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tl_username">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:fontFamily="@font/popmedium"
+            android:fontFamily="@font/popregular"
             android:id="@+id/ti_fullname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

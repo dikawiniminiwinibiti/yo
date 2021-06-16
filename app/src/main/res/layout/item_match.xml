@@ -9,7 +9,8 @@
     android:backgroundTint="@color/bg"
     android:orientation="horizontal"
     app:cardCornerRadius="5dp"
-    app:cardUseCompatPadding="true">
+    app:cardUseCompatPadding="true"
+    android:outlineProvider="none">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -29,7 +30,7 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-        
+
         <TextView
             android:id="@+id/team_name1"
             android:layout_width="90sp"
@@ -41,7 +42,7 @@
             android:padding="5dp"
             android:text="@string/team1"
 
-            android:textSize="15sp"
+            android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/img_team2"
             app:layout_constraintHorizontal_bias="0.0"
@@ -63,7 +64,7 @@
             android:maxLines="3"
             android:padding="5dp"
             android:text="@string/team2"
-            android:textSize="15sp"
+            android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/img_team2"
             app:layout_constraintHorizontal_bias="1.0"
@@ -73,9 +74,9 @@
 
         <TextView
             android:id="@+id/score_team1"
-            android:layout_width="90sp"
+            android:layout_width="60sp"
             android:layout_height="35sp"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="90dp"
             android:layout_marginRight="5dp"
             android:fontFamily="@font/popmedium"
             android:gravity="center_vertical"
@@ -86,15 +87,15 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/img_team2"
-            app:layout_constraintHorizontal_bias="0.035"
+            app:layout_constraintHorizontal_bias="0.097"
             app:layout_constraintStart_toEndOf="@+id/img_team1"
             app:layout_constraintTop_toTopOf="parent"
 
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/score_team2"
-            android:layout_width="90sp"
+            android:layout_width="60sp"
             android:layout_height="35sp"
             android:layout_marginStart="1dp"
             android:layout_marginTop="25dp"
@@ -108,10 +109,10 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/img_team2"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.895"
             app:layout_constraintStart_toEndOf="@+id/img_team1"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintVertical_bias="0.94" />
 
         <ImageView
             android:id="@+id/img_team2"

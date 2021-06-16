@@ -1,8 +1,12 @@
 package com.example.nba.view;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -19,11 +23,11 @@ public class DetailTeamActivity extends AppCompatActivity {
     TextView tvName, tvDescription;
     String id;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_team);
-
         ivPict = findViewById(R.id.team_logo);
         tvName = findViewById(R.id.team_name);
         tvDescription = findViewById(R.id.tx_detail);
@@ -34,6 +38,7 @@ public class DetailTeamActivity extends AppCompatActivity {
             new NBAService().getDetailTeam(detailListener, id);
         }
     }
+
     private Boolean checkIncoming(){
         Boolean check = false;
         if(getIntent().hasExtra("id")){
@@ -41,6 +46,7 @@ public class DetailTeamActivity extends AppCompatActivity {
         }
         return check;
     }
+
 
     NBAListener<List<DetailTeamItem>> detailListener = new NBAListener<List<DetailTeamItem>>() {
         @Override
@@ -53,6 +59,7 @@ public class DetailTeamActivity extends AppCompatActivity {
             tvDescription.setText(items.get(0).getStrDescriptionEN());
 
         }
+
 
         @Override
         public void onFailed(String msg) {

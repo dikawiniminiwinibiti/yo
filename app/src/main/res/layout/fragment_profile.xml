@@ -37,7 +37,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="5dp"
-        android:src="@drawable/profile_user" />
+        android:src="@drawable/user_account" />
 
     <TextView
         android:id="@+id/textView3"
@@ -115,10 +115,10 @@
 
     <EditText
         android:id="@+id/ti_username"
-        android:layout_width="200dp"
+        android:layout_width="220dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/username"
-        android:layout_marginLeft="30dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="50dp"
         android:layout_toRightOf="@id/textView3"
         android:autofillHints="@string/app_name"
@@ -127,10 +127,10 @@
 
     <EditText
         android:id="@+id/ti_fullname"
-        android:layout_width="200dp"
+        android:layout_width="220dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/ti_username"
-        android:layout_marginLeft="40dp"
+        android:layout_marginLeft="30dp"
         android:layout_marginTop="20dp"
         android:layout_toRightOf="@id/textView2"
         android:autofillHints="Mahardika"
@@ -140,10 +140,10 @@
 
     <EditText
         android:id="@+id/ti_password"
-        android:layout_width="200dp"
+        android:layout_width="220dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/ti_fullname"
-        android:layout_marginLeft="35dp"
+        android:layout_marginLeft="25dp"
         android:layout_marginTop="20dp"
         android:layout_toRightOf="@id/ps"
         android:inputType="textPassword"
