@@ -1,5 +1,6 @@
 package com.example.nba.adapter;
 
+import android.graphics.Color;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -57,24 +58,33 @@ public class MatchAdapter extends RecyclerView.Adapter<MatchAdapter.ViewHolder> 
             ivTeamHome = itemView.findViewById(R.id.img_team1);
             ivTeamAway = itemView.findViewById(R.id.img_team2);
             tvHomeName = itemView.findViewById(R.id.team_name1);
-            tvHomeScore = itemView.findViewById(R.id.team_name2);
-            tvAwayName = itemView.findViewById(R.id.score_team1);
+            tvHomeScore = itemView.findViewById(R.id.score_team1);
+            tvAwayName = itemView.findViewById(R.id.team_name2);
             tvAwayScore = itemView.findViewById(R.id.score_team2);
         }
 
         void bind(EventsItem item){
+            idHomeTeam = item.getIdHomeTeam();
+            idAwayTeam = item.getIdAwayTeam();
+//            Log.d("Hasil : ", item.getStrAwayTeam());
+            new NBAService().getDetailTeam(detailHomeListener, idHomeTeam);
+            new NBAService().getDetailTeam(detailAwayListener, idAwayTeam);
+
             tvHomeName.setText(item.getStrHomeTeam());
             tvHomeScore.setText(item.getIntHomeScore());
             tvAwayName.setText(item.getStrAwayTeam());
             tvAwayScore.setText(item.getIntAwayScore());
 
-            idHomeTeam = item.getIdHomeTeam();
-            idAwayTeam = item.getIdAwayTeam();
-
-            Log.d("Hasil : ", item.getStrAwayTeam());
-
-            new NBAService().getDetailTeam(detailHomeListener, idHomeTeam);
-            new NBAService().getDetailTeam(detailAwayListener, idAwayTeam);
+            int homeScore, awayScore;
+            homeScore =  Integer.parseInt(item.getIntHomeScore());
+            awayScore =  Integer.parseInt(item.getIntAwayScore());
+            if(homeScore > awayScore){
+                tvHomeScore.setTextColor(Color.parseColor("#537a50"));
+                tvAwayScore.setTextColor(Color.parseColor("#bf5c5c"));
+            } else {
+                tvHomeScore.setTextColor(Color.parseColor("#bf5c5c"));
+                tvAwayScore.setTextColor(Color.parseColor("#537a50"));
+            }
         }
 
         NBAListener<List<DetailTeamItem>> detailHomeListener = new NBAListener<List<DetailTeamItem>>() {

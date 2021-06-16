@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.nba.R;
 import com.example.nba.database.AppDatabase;
@@ -24,6 +25,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     Button btnLogin;
     DataUserDAO dataUserDAO;
     String dbUsername, dbPassword, dbFullname;
+    int dbId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,50 +46,56 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onClick(View v) {
-        if(btnLogin.equals(v)){
+        if (btnLogin.equals(v)) {
             String sUsername = etUsername.getText().toString();
             String sPassword = etPassword.getText().toString();
-            if(sUsername.equals("")){
-                etUsername.setError("Username is required!");
+            if (sUsername.equals("")) {
+                Toast.makeText(getApplicationContext(), "Username is required!", Toast.LENGTH_SHORT).show();
             }
-            if(sPassword.equals("")){
-                etPassword.setError("Password is required!");
+            if (sPassword.equals("")) {
+                Toast.makeText(getApplicationContext(), "Password is required!", Toast.LENGTH_SHORT).show();
             }
-            if(!sUsername.equals("") && !sPassword.equals("")){
+            if (!sUsername.equals("") && !sPassword.equals("")) {
                 checkUser(sUsername, sPassword);
-                if(dbUsername.equals(sUsername) && dbPassword.equals(sPassword)){
-                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                    intent.putExtra("username", dbUsername);
-                    intent.putExtra("fullname", dbFullname);
-                    intent.putExtra("password", dbPassword);
-                    startActivity(intent);
-                    finish();
-                }
-                else if(!dbUsername.equals(sUsername)){
-                    etUsername.setError( "Username or E-mail is wrong!" );
-                } else if(!dbPassword.equals(sPassword)){
-                    etPassword.setError( "Password is wrong!" );
-                }
             }
         }
-        if(tvRegister.equals(v)){
+        if (tvRegister.equals(v)) {
             Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
             startActivity(intent);
         }
     }
 
-    private void checkUser(String username, String password){
-        List<DataUser> datas = dataUserDAO.getData();
-        Log.d("Hasil : ", String.valueOf(datas.size()));
-        for(DataUser dataUser : datas){
-            System.out.println("Output");
-            if(dataUser.getUsername().equals(username) && dataUser.getPassword().equals(password)){
-                Log.d("Hasil : ", dataUser.getUsername());
-                dbUsername = dataUser.getUsername();
-                dbFullname = dataUser.getFullname();
-                dbPassword = dataUser.getPassword();
-                break;
+    private void checkUser(String username, String password) {
+        boolean checking = dataUserDAO.dataExist(username);
+        boolean login = false;
+        if (checking) {
+            List<DataUser> datas = dataUserDAO.getData();
+            Log.d("Hasil : ", String.valueOf(datas.size()));
+            for (DataUser dataUser : datas) {
+                System.out.println("Output");
+                if (dataUser.getUsername().equals(username) && dataUser.getPassword().equals(password)) {
+                    Log.d("Hasil : ", dataUser.getUsername());
+                    dbId = dataUser.getId();
+                    dbUsername = dataUser.getUsername();
+                    dbFullname = dataUser.getFullname();
+                    dbPassword = dataUser.getPassword();
+
+                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                    intent.putExtra("id", String.valueOf(dbId));
+                    intent.putExtra("username", dbUsername);
+                    intent.putExtra("fullname", dbFullname);
+                    intent.putExtra("password", dbPassword);
+                    login = true;
+                    Toast.makeText(getApplicationContext(), "Selamat! User berhasil login", Toast.LENGTH_SHORT).show();
+                    startActivity(intent);
+                    finish();
+                }
             }
+            if(!login){
+                Toast.makeText(getApplicationContext(), "Password is wrong!", Toast.LENGTH_SHORT).show();
+            }
+        } else {
+            Toast.makeText(getApplicationContext(), "Maaf user belum terdaftar", Toast.LENGTH_SHORT).show();
         }
     }
 }

@@ -44,7 +44,7 @@
 
             <TextView
                 android:id="@+id/team_from"
-                android:maxLines="2"
+                android:maxLines="3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"

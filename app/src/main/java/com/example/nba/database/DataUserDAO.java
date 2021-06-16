@@ -21,4 +21,7 @@ public interface DataUserDAO {
 
     @Delete
     void deleteData(DataUser item);
+
+    @Query("SELECT EXISTS (SELECT * FROM user_db WHERE username = :username)")
+    boolean dataExist(String username);
 }

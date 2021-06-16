@@ -7,8 +7,20 @@
     android:orientation="vertical">
 
     <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="NBA League Team"
+        android:textSize="25sp"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:background="#85008a"
+        android:textColor="#fff"
+        />
+
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_match"
+        android:id="@+id/rv_team"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:scrollbars="vertical"

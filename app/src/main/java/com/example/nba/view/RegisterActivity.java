@@ -7,6 +7,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.nba.R;
 import com.example.nba.database.AppDatabase;
@@ -17,6 +19,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
     DataUserDAO dataUserDAO;
     EditText etUsername, etFullname, etPassword;
+    TextView btnLogin;
     Button btnRegister;
 
     @Override
@@ -30,18 +33,26 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         etFullname = findViewById(R.id.ti_fullname);
         etPassword = findViewById(R.id.ti_password);
         btnRegister = findViewById(R.id.btn_register);
+        btnLogin = findViewById(R.id.btn_login);
 
         btnRegister.setOnClickListener(this);
+        btnLogin.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
-        String username = etUsername.getText().toString();
-        String fullname = etFullname.getText().toString();
-        String password = etPassword.getText().toString();
+        if(btnRegister.equals(v)){
+            String username = etUsername.getText().toString();
+            String fullname = etFullname.getText().toString();
+            String password = etPassword.getText().toString();
 
-        DataUser dataUser = new DataUser(username, fullname, password);
-        dataUserDAO.InsertData(dataUser);
-        finish();
+            DataUser dataUser = new DataUser(username, fullname, password);
+            dataUserDAO.InsertData(dataUser);
+            Toast.makeText(getApplicationContext(), "Berhasil Registrasi Data User", Toast.LENGTH_SHORT).show();
+            finish();
+        }
+        else if(btnLogin.equals(v)){
+            finish();
+        }
     }
 }

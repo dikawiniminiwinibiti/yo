@@ -25,6 +25,10 @@ import java.util.List;
 
 public class MatchFragment extends Fragment {
 
+    public MatchFragment(){
+
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -34,7 +38,7 @@ public class MatchFragment extends Fragment {
     public RecyclerView rvMatch;
 
     @Override
-    public void onViewCreated(@NonNull @NotNull View view, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
+    public void onViewCreated(@NonNull @NotNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
         rvMatch = view.findViewById(R.id.rv_match);
@@ -47,6 +51,7 @@ public class MatchFragment extends Fragment {
 
         @Override
         public void onSuccess(List<EventsItem> item) {
+            Log.d("Hasil : ", item.toString());
             rvMatch.setLayoutManager(new LinearLayoutManager(getContext()));
             MatchAdapter matchAdapter = new MatchAdapter(item);
             rvMatch.setAdapter(matchAdapter);
