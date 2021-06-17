@@ -51,6 +51,8 @@ public class MatchAdapter extends RecyclerView.Adapter<MatchAdapter.ViewHolder> 
         ImageView ivTeamHome, ivTeamAway;
         TextView tvHomeName, tvHomeScore, tvAwayName, tvAwayScore, tvDate;
         String idHomeTeam, idAwayTeam;
+        int homeScore, awayScore;
+        String sHomeScore, sAwayScore;
 
         public ViewHolder(@NonNull @NotNull View itemView) {
             super(itemView);
@@ -75,16 +77,20 @@ public class MatchAdapter extends RecyclerView.Adapter<MatchAdapter.ViewHolder> 
             tvAwayName.setText(item.getStrAwayTeam());
             tvAwayScore.setText(item.getIntAwayScore());
 
-            int homeScore, awayScore;
-            homeScore =  Integer.parseInt(item.getIntHomeScore());
-            awayScore =  Integer.parseInt(item.getIntAwayScore());
-            if(homeScore > awayScore){
-                tvHomeScore.setTextColor(Color.parseColor("#537a50"));
-                tvAwayScore.setTextColor(Color.parseColor("#bf5c5c"));
-            } else {
-                tvHomeScore.setTextColor(Color.parseColor("#bf5c5c"));
-                tvAwayScore.setTextColor(Color.parseColor("#537a50"));
+            sHomeScore = item.getIntHomeScore();
+            sAwayScore = item.getIntAwayScore();
+            if(sHomeScore!=null && sAwayScore!=null){
+                homeScore = Integer.parseInt(sHomeScore);
+                awayScore = Integer.parseInt(sAwayScore);
+                if(homeScore > awayScore){
+                    tvHomeScore.setTextColor(Color.parseColor("#537a50"));
+                    tvAwayScore.setTextColor(Color.parseColor("#bf5c5c"));
+                } else {
+                    tvHomeScore.setTextColor(Color.parseColor("#bf5c5c"));
+                    tvAwayScore.setTextColor(Color.parseColor("#537a50"));
+                }
             }
+
         }
 
         NBAListener<List<DetailTeamItem>> detailHomeListener = new NBAListener<List<DetailTeamItem>>() {
