@@ -1,11 +1,9 @@
 package com.example.nba.splash;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-
 import com.example.nba.R;
 import com.example.nba.view.LoginActivity;
 import com.example.nba.view.MainActivity;
@@ -23,7 +21,6 @@ public class SplashActivity extends AppCompatActivity {
                     startActivity(home);
                     finish();
                 }, SPLASH_TIME
-
         );
     }
 }

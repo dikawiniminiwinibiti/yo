@@ -56,7 +56,6 @@ public class TeamAdapter extends RecyclerView.Adapter<TeamAdapter.ViewHolder>{
             super(itemView);
             ivTeam = itemView.findViewById(R.id.img_team);
             tvTeamName = itemView.findViewById(R.id.team_name);
-
             tvTeamStadium = itemView.findViewById(R.id.team_from);
             btnDetail = itemView.findViewById(R.id.btn_preview);
         }

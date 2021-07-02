@@ -11,7 +11,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="NBA result match"
+        android:text="@string/nba_result_match"
         android:textSize="25sp"
         android:textAlignment="center"
         android:textAllCaps="true"
@@ -23,7 +23,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="30dp"
-        android:text="Season 2020 - 2021"
+        android:text="@string/season_2020_2021"
         android:fontFamily="@font/popregular"
         android:textSize="20sp"
         android:layout_marginBottom="5dp"
@@ -32,10 +32,7 @@
         android:textStyle="bold"
         android:background="@color/purple_primary"
         android:textColor="#fff"
-
         />
-
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_match"
         android:layout_width="match_parent"

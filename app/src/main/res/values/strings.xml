@@ -29,4 +29,6 @@
     <string name="register">Register</string>
     <string name="login">Login</string>
     <string name="password">Password</string>
+    <string name="nba_result_match">NBA result match</string>
+    <string name="season_2020_2021">Season 2020 - 2021</string>
 </resources>
